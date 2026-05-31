@@ -1,0 +1,9 @@
+{
+  "name": "Te Ata Wellness",
+  "short_name": "Wellness",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F4F1EC",
+  "theme_color": "#2B2B2B",
+  "description": "Kevin and Kerri's 30-day Te Ata Wellness tracker."
+}
