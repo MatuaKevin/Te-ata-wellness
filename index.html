@@ -13,8 +13,7 @@
       --muted: #6F6A63;
       --line: #DDD5CB;
       --dark: #2B2B2B;
-      --good: #1F7A4D;
-      --partial: #D9951E;
+      --partial: #FFE7B8;
       --soft: #EFE8DD;
     }
     * { box-sizing: border-box; }
@@ -24,169 +23,54 @@
       background: var(--bg);
       color: var(--ink);
     }
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 18px;
-      padding-bottom: 100px;
-    }
-    header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 18px;
-    }
-    .eyebrow {
-      text-transform: uppercase;
-      letter-spacing: .28em;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
-    }
-    h1 {
-      margin: 4px 0 0;
-      font-size: clamp(34px, 8vw, 60px);
-      line-height: .9;
-      letter-spacing: -0.06em;
-    }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 18px; padding-bottom: 100px; }
+    header { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .28em; color: var(--muted); font-size: 12px; font-weight: 800; }
+    h1 { margin: 4px 0 0; font-size: clamp(34px, 8vw, 60px); line-height: .9; letter-spacing: -0.06em; }
     .sub { color: var(--muted); margin-top: 8px; }
-    .pill {
-      background: var(--dark);
-      color: white;
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
+    .sync { color: var(--muted); margin-top: 6px; font-size: 12px; font-weight: 800; }
+    .pill { background: var(--dark); color: white; border-radius: 999px; padding: 10px 14px; font-weight: 900; white-space: nowrap; }
     .grid { display: grid; gap: 14px; }
     .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 14px; }
     @media (min-width: 800px) { .stats { grid-template-columns: repeat(4, 1fr); } .people { grid-template-columns: 1fr 1fr; } }
-    .card {
-      background: rgba(255,255,255,.88);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      padding: 18px;
-      box-shadow: 0 8px 24px rgba(43,43,43,.06);
-    }
-    .stat-label { color: var(--muted); font-size: 13px; font-weight: 700; }
+    .card { background: rgba(255,255,255,.9); border: 1px solid var(--line); border-radius: 28px; padding: 18px; box-shadow: 0 8px 24px rgba(43,43,43,.06); }
+    .stat-label { color: var(--muted); font-size: 13px; font-weight: 800; }
     .stat-value { font-size: 30px; font-weight: 950; margin-top: 4px; }
+    .banner { background: white; border: 1px solid var(--line); border-radius: 22px; padding: 12px 14px; margin-bottom: 14px; font-weight: 850; }
     .tabs {
-      position: fixed;
-      left: 10px; right: 10px; bottom: 10px;
-      max-width: 760px;
-      margin: 0 auto;
-      background: rgba(255,255,255,.95);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      padding: 6px;
-      box-shadow: 0 8px 24px rgba(43,43,43,.14);
-      z-index: 20;
+      position: fixed; left: 10px; right: 10px; bottom: 10px; max-width: 760px; margin: 0 auto;
+      background: rgba(255,255,255,.96); border: 1px solid var(--line); border-radius: 22px;
+      display: grid; grid-template-columns: repeat(4, 1fr); padding: 6px; box-shadow: 0 8px 24px rgba(43,43,43,.14); z-index: 20;
     }
-    .tab {
-      border: 0;
-      background: transparent;
-      border-radius: 16px;
-      padding: 10px 6px;
-      font-weight: 850;
-      color: var(--muted);
-      cursor: pointer;
-    }
+    .tab { border: 0; background: transparent; border-radius: 16px; padding: 10px 6px; font-weight: 900; color: var(--muted); cursor: pointer; }
     .tab.active { background: var(--dark); color: white; }
-    .day-row {
-      display:flex; align-items:center; justify-content:space-between; gap:10px; margin: 8px 0 16px;
-    }
-    button {
-      font: inherit;
-    }
-    .btn {
-      border: 1px solid var(--line);
-      background: white;
-      color: var(--ink);
-      border-radius: 16px;
-      padding: 10px 12px;
-      font-weight: 850;
-      cursor: pointer;
-    }
+    .day-row { display:flex; align-items:center; justify-content:space-between; gap:10px; margin: 8px 0 16px; }
+    button { font: inherit; }
+    .btn { border: 1px solid var(--line); background: white; color: var(--ink); border-radius: 16px; padding: 10px 12px; font-weight: 900; cursor: pointer; }
     .btn.dark { background: var(--dark); color: white; border-color: var(--dark); }
-    .person-head {
-      display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:12px;
-    }
+    .person-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:12px; }
     h2 { margin: 0; font-size: 28px; letter-spacing: -0.04em; }
     .score { font-size: 34px; font-weight: 950; }
-    .bar {
-      height: 12px;
-      background: var(--soft);
-      border-radius: 999px;
-      overflow:hidden;
-      margin: 10px 0 16px;
-    }
-    .bar > span {
-      display:block; height:100%; background: var(--dark); border-radius:999px;
-      width: 0%;
-      transition: width .25s ease;
-    }
-    .habits {
-      display:grid; grid-template-columns: 1fr; gap: 10px;
-    }
+    .bar { height: 12px; background: var(--soft); border-radius: 999px; overflow:hidden; margin: 10px 0 16px; }
+    .bar > span { display:block; height:100%; background: var(--dark); border-radius:999px; width: 0%; transition: width .25s ease; }
+    .habits { display:grid; grid-template-columns: 1fr; gap: 10px; }
     @media (min-width: 520px) { .habits { grid-template-columns: 1fr 1fr; } }
-    .habit {
-      border: 1px solid var(--line);
-      background: var(--bg);
-      border-radius: 20px;
-      padding: 15px;
-      min-height: 62px;
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      cursor:pointer;
-      text-align:left;
-    }
-    .habit.done {
-      background: var(--dark);
-      color: white;
-      border-color: var(--dark);
-    }
+    .habit { border: 1px solid var(--line); background: var(--bg); border-radius: 20px; padding: 15px; min-height: 62px; display:flex; align-items:center; justify-content:space-between; gap:10px; cursor:pointer; text-align:left; }
+    .habit.done { background: var(--dark); color: white; border-color: var(--dark); }
     .habit span:first-child { font-size: 22px; margin-right: 8px; }
-    .habit-title { font-weight: 850; }
+    .habit-title { font-weight: 900; }
     .tick { font-weight: 950; font-size: 20px; }
-    .calendar {
-      display:grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-    }
+    .calendar { display:grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
     @media (min-width: 720px) { .calendar { grid-template-columns: repeat(10, 1fr); } }
-    .daybox {
-      border: 1px solid var(--line);
-      background: var(--bg);
-      border-radius: 18px;
-      padding: 12px;
-      min-height: 78px;
-      cursor:pointer;
-      text-align:left;
-    }
+    .daybox { border: 1px solid var(--line); background: var(--bg); border-radius: 18px; padding: 12px; min-height: 78px; cursor:pointer; text-align:left; }
     .daybox.complete { background: var(--dark); color:white; border-color: var(--dark); }
-    .daybox.partial { background: #FFE7B8; border-color: #E0A647; }
+    .daybox.partial { background: var(--partial); border-color: #E0A647; }
     .daybox.current { outline: 3px solid rgba(43,43,43,.25); }
-    .small { color: var(--muted); font-size: 12px; font-weight: 700; }
+    .small { color: var(--muted); font-size: 12px; font-weight: 800; }
     .complete .small { color: rgba(255,255,255,.75); }
-    textarea, input {
-      width:100%;
-      border:1px solid var(--line);
-      background: var(--bg);
-      border-radius: 18px;
-      padding: 14px;
-      font: inherit;
-      outline: none;
-    }
-    textarea { min-height: 150px; resize: vertical; }
+    textarea { width:100%; border:1px solid var(--line); background: var(--bg); border-radius: 18px; padding: 14px; font: inherit; outline: none; min-height: 150px; resize: vertical; }
     .hidden { display:none; }
-    .footer-note {
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 14px;
-      text-align:center;
-    }
+    .footer-note { color: var(--muted); font-size: 13px; margin-top: 14px; text-align:center; }
   </style>
 </head>
 <body>
@@ -195,10 +79,13 @@
       <div>
         <div class="eyebrow">Te Ata Wellness</div>
         <h1>June Challenge</h1>
-        <div class="sub">Kevin & Kerri — small habits, done consistently.</div>
+        <div class="sub">Kevin & Kerri — synced across all devices.</div>
+        <div class="sync" id="syncStatus">Loading shared data...</div>
       </div>
       <div class="pill" id="dayPill">Day 1 / 30</div>
     </header>
+
+    <div class="banner">Shared mode is on. Ticks save to Cloudflare D1, not local storage.</div>
 
     <section class="grid stats">
       <div class="card"><div class="stat-label">Today Combined</div><div class="stat-value" id="combinedToday">0%</div></div>
@@ -226,35 +113,17 @@
 
     <main id="statsView" class="hidden">
       <section class="grid people">
-        <div class="card">
-          <h2>Kevin Stats</h2>
-          <div class="bar"><span id="kevinMonthBar"></span></div>
-          <p><strong id="kevinMonth">0%</strong> total challenge completion</p>
-          <p class="small" id="kevinTicks">0 ticks completed</p>
-        </div>
-        <div class="card">
-          <h2>Kerri Stats</h2>
-          <div class="bar"><span id="kerriMonthBar"></span></div>
-          <p><strong id="kerriMonth">0%</strong> total challenge completion</p>
-          <p class="small" id="kerriTicks">0 ticks completed</p>
-        </div>
+        <div class="card"><h2>Kevin Stats</h2><div class="bar"><span id="kevinMonthBar"></span></div><p><strong id="kevinMonth">0%</strong> total challenge completion</p><p class="small" id="kevinTicks">0 ticks completed</p></div>
+        <div class="card"><h2>Kerri Stats</h2><div class="bar"><span id="kerriMonthBar"></span></div><p><strong id="kerriMonth">0%</strong> total challenge completion</p><p class="small" id="kerriTicks">0 ticks completed</p></div>
       </section>
     </main>
 
     <main id="reflectView" class="hidden">
       <section class="grid people">
-        <div class="card">
-          <h2>Kevin Reflection</h2>
-          <p class="small">What went well? What are you grateful for?</p>
-          <textarea id="KevinReflection" placeholder="Today I am grateful for..."></textarea>
-        </div>
-        <div class="card">
-          <h2>Kerri Reflection</h2>
-          <p class="small">What went well? What are you grateful for?</p>
-          <textarea id="KerriReflection" placeholder="Today I am grateful for..."></textarea>
-        </div>
+        <div class="card"><h2>Kevin Reflection</h2><p class="small">What went well? What are you grateful for?</p><textarea id="KevinReflection" placeholder="Today I am grateful for..."></textarea></div>
+        <div class="card"><h2>Kerri Reflection</h2><p class="small">What went well? What are you grateful for?</p><textarea id="KerriReflection" placeholder="Today I am grateful for..."></textarea></div>
       </section>
-      <p class="footer-note">Your progress saves automatically on this device.</p>
+      <p class="footer-note">Shared progress auto-refreshes every 10 seconds.</p>
     </main>
   </div>
 
@@ -266,6 +135,7 @@
   </nav>
 
 <script>
+const API = "https://te-ata-wellness-sync.kevin-bc2.workers.dev";
 const habits = [
   ["water", "💧", "Water only"],
   ["fastfood", "🍔", "No fast food"],
@@ -278,6 +148,7 @@ const habits = [
 ];
 const people = ["Kevin", "Kerri"];
 let day = 1;
+let reflectionTimers = {};
 
 function emptyDay() {
   return {
@@ -291,11 +162,40 @@ function defaultData() {
   for (let i=1; i<=30; i++) obj[i] = emptyDay();
   return obj;
 }
-let data = JSON.parse(localStorage.getItem("teAtaWellnessData") || "null") || defaultData();
+let data = defaultData();
 
-function save() {
-  localStorage.setItem("teAtaWellnessData", JSON.stringify(data));
+function setStatus(text) {
+  document.getElementById("syncStatus").textContent = text;
 }
+
+async function loadState() {
+  try {
+    setStatus("Syncing shared data...");
+    const res = await fetch(API + "/api/state", { cache: "no-store" });
+    if (!res.ok) throw new Error("Could not load shared data");
+    const state = await res.json();
+    data = defaultData();
+
+    (state.habits || []).forEach(row => {
+      if (data[row.day] && data[row.day][row.person]) {
+        data[row.day][row.person][row.habit] = !!row.done;
+      }
+    });
+
+    (state.reflections || []).forEach(row => {
+      if (data[row.day] && data[row.day].reflections[row.person] !== undefined) {
+        data[row.day].reflections[row.person] = row.text || "";
+      }
+    });
+
+    setStatus("Shared data synced");
+    render();
+  } catch (e) {
+    console.error(e);
+    setStatus("Sync problem — check sync Worker");
+  }
+}
+
 function score(person, d = day) {
   return habits.filter(h => data[d][person][h[0]]).length;
 }
@@ -311,16 +211,44 @@ function goDay(d) {
   showView("today", document.querySelectorAll(".tab")[0]);
   render();
 }
-function toggle(person, habit) {
-  data[day][person][habit] = !data[day][person][habit];
-  save();
+async function toggle(person, habit) {
+  const done = !data[day][person][habit];
+  data[day][person][habit] = done;
   render();
+
+  try {
+    setStatus("Saving...");
+    const res = await fetch(API + "/api/toggle", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ day, person, habit, done })
+    });
+    if (!res.ok) throw new Error("Save failed");
+    setStatus("Saved to shared database");
+    await loadState();
+  } catch (e) {
+    console.error(e);
+    setStatus("Save problem — check Worker code");
+  }
 }
-function resetToday() {
-  if (confirm("Reset Day " + day + "?")) {
-    data[day] = emptyDay();
-    save();
-    render();
+async function resetToday() {
+  if (!confirm("Reset Day " + day + " for Kevin and Kerri?")) return;
+  data[day] = emptyDay();
+  render();
+
+  try {
+    setStatus("Resetting...");
+    const res = await fetch(API + "/api/reset-day", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ day })
+    });
+    if (!res.ok) throw new Error("Reset failed");
+    setStatus("Day reset");
+    await loadState();
+  } catch (e) {
+    console.error(e);
+    setStatus("Reset problem");
   }
 }
 function showView(view, btn) {
@@ -336,10 +264,7 @@ function renderPeople() {
   el.innerHTML = people.map(person => `
     <article class="card">
       <div class="person-head">
-        <div>
-          <h2>${person}</h2>
-          <div class="small">Today: ${score(person)} / ${habits.length}</div>
-        </div>
+        <div><h2>${person}</h2><div class="small">Today: ${score(person)} / ${habits.length}</div></div>
         <div class="score">${percent(person)}%</div>
       </div>
       <div class="bar"><span style="width:${percent(person)}%"></span></div>
@@ -392,8 +317,24 @@ function renderReflections() {
     if (!area) return;
     if (document.activeElement !== area) area.value = data[day].reflections[person] || "";
     area.oninput = (e) => {
-      data[day].reflections[person] = e.target.value;
-      save();
+      const text = e.target.value;
+      data[day].reflections[person] = text;
+      clearTimeout(reflectionTimers[person]);
+      reflectionTimers[person] = setTimeout(async () => {
+        try {
+          setStatus("Saving reflection...");
+          const res = await fetch(API + "/api/reflection", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ day, person, text })
+          });
+          if (!res.ok) throw new Error("Reflection save failed");
+          setStatus("Reflection saved");
+        } catch (e) {
+          console.error(e);
+          setStatus("Reflection save problem");
+        }
+      }, 600);
     };
   });
 }
@@ -411,6 +352,8 @@ function render() {
   renderReflections();
 }
 render();
+loadState();
+setInterval(loadState, 10000);
 </script>
 </body>
 </html>
